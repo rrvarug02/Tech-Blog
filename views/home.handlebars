@@ -1,0 +1,12 @@
+<h2>Latest Posts</h2>
+{{#if posts.length}}
+    <ul>
+        {{#each posts}}
+            <li>
+                <a href="/post/{{id}}">{{title}}</a> by {{username}} on {{createdAt}}
+            </li>
+        {{/each}}
+    </ul>
+{{else}}
+    <p>No posts yet.</p>
+{{/if}}

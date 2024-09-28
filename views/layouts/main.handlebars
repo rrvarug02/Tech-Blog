@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Tech Blog</h1>
+        <nav>
+            <a href="/">Home</a>
+            {{#if user}}
+                <a href="/dashboard">Dashboard</a>
+                <form action="/logout" method="POST" style="display:inline;">
+                    <button type="submit">Logout</button>
+                </form>
+            {{else}}
+                <a href="/login">Login</a>
+                <a href="/signup">Sign Up</a>
+            {{/if}}
+        </nav>
+    </header>
+    <main>
+        {{{body}}}
+    </main>
+    <footer>
+        <p>&copy; {{currentYear}} Tech Blog. All rights reserved.</p>
+    </footer>
+    <script src="/js/scripts.js"></script>
+</body>
+</html>

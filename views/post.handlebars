@@ -1,0 +1,17 @@
+<h2>{{title}}</h2>
+<p>{{content}}</p>
+<p>Posted by {{username}} on {{createdAt}}</p>
+
+<h3>Comments</h3>
+<ul id="comments">
+    {{#each comments}}
+        <li>{{content}} by {{username}} on {{createdAt}}</li>
+    {{/each}}
+</ul>
+
+{{#if ../user}}
+    <textarea id="commentInput" placeholder="Leave a comment..."></textarea>
+    <button onclick="submitComment()">Submit Comment</button>
+{{else}}
+    <p>You must be logged in to comment.</p>
+{{/if}}

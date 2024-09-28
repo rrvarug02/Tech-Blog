@@ -1,0 +1,15 @@
+<h2>Your Posts</h2>
+{{#if posts.length}}
+    <ul>
+        {{#each posts}}
+            <li>
+                <a href="/post/{{id}}">{{title}}</a>
+                <button onclick="deletePost({{id}})">Delete</button>
+                <button onclick="updatePost({{id}})">Update</button>
+            </li>
+        {{/each}}
+    </ul>
+{{else}}
+    <p>No posts yet. Create one!</p>
+{{/if}}
+<button onclick="location.href='/create-post'">Add New Post</button>
